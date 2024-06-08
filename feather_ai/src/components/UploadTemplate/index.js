@@ -3,7 +3,8 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { encodeData } from "../../utils";
-
+import ExampleTemplate from "../ExampleTemplate";
+import BackupIcon from '@mui/icons-material/Backup';
 const UploadTemplate = () => {
   const [jsonContent, setJsonContent] = useState(null);
 
@@ -37,7 +38,7 @@ const UploadTemplate = () => {
         fontFamily: "Raleway",
       }}
     >
-      <Button variant="contained" component="label">
+      <Button variant="contained" component="label" endIcon={<BackupIcon />}>
         Upload Quiz Template
         <input
           type="file"
@@ -46,6 +47,8 @@ const UploadTemplate = () => {
           onChange={handleFileUpload}
         />
       </Button>
+      <br />
+      <ExampleTemplate />
       <br />
       {jsonContent ? (
         <Button
