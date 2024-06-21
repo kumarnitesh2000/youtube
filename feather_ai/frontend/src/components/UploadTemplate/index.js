@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { encodeData } from "../../utils";
 import ExampleTemplate from "../ExampleTemplate";
 import BackupIcon from '@mui/icons-material/Backup';
-const UploadTemplate = () => {
+const UploadTemplate = ({content}) => {
   const [jsonContent, setJsonContent] = useState(null);
 
   const handleFileUpload = (event) => {
@@ -27,7 +27,10 @@ const UploadTemplate = () => {
       setJsonContent(null);
     }
   };
-
+  useEffect(() => {
+    if(content!=null)
+    setJsonContent(encodeData(content));
+  },[content]);
   return (
     <Box
       sx={{
