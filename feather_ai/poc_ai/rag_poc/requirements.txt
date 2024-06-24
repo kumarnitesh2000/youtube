@@ -1,4 +1,0 @@
-requests==2.32.3
-langchain_pinecone
-langchain_google_genai
-langchain_community
